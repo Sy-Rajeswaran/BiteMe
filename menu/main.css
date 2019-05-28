@@ -1,0 +1,198 @@
+body{
+    background-color: #f4f6d4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Overarching navbar design styling */
+.navbar {
+    position: fixed;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+/* Overlay Styling */
+.overlay {
+    position: fixed;
+    width: 100%;
+    /*Figure out issue with to remove px specification of height. It should take the parent's height
+    Issue with % (percentages) */
+    height: 100px;
+    z-index: -1;
+    background-color: #f4f6d4;
+    opacity: 0.5;
+}
+
+/* Navigation bar selection list div styling (The box encapsulating the UL)*/
+.selectionList{
+    position: relative;
+    align-self: center;
+    width: auto;
+}
+
+/* Navigation bar selection list styling (The actual "ul" tag) */
+.selectionList > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the navigation bar list items (Each of the "ul" items) */
+.selectionList > ul > li {
+    float: left;
+}
+
+/* List item hover effect */
+.selectionList > ul > li :hover{
+    background-color: grey;
+}
+
+/* The sign out button styling */
+.selectionList > ul > li a{
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    margin: 8px;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+}
+
+/* Styling for checkout bag button */
+#checkoutBag {
+    display: block;
+    text-decoration: none;
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    background-color: #f4f6d4;
+    opacity: 0.5; 
+}
+
+/* Styling for checkout bag image */
+#checkoutBag > img {
+    width: 20px;
+    height: auto;
+}
+
+/* Logo div */
+.logo {
+    position: relative;
+    z-index: -1;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Logo Image resizing */
+.logo > img {
+    width: 100px;
+    height: auto;
+}
+
+/* Styling for the restaurant information container */
+.restaurantInformation {
+    position: relative;
+    padding-top: 120px;
+    padding-left: 10%;
+}
+
+/* Styling for the restaurant information */
+.restaurantInformation > div > img {
+    width: 100px;
+    height: auto;
+}
+
+.foodItemCategoryBar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 36px;
+}
+
+.foodItemCategoryContainer {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height: auto;
+    background-color: black;
+    border-radius: 8px;
+}
+
+.foodItemCategoryContainer > button {
+    padding:10px 15px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    background-color: black;
+}
+
+.foodItemCategoryContainer > button:hover {
+    background-color: grey;
+}
+
+.foodItemDisplay {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+}
+
+.foodItemDisplayContainer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 0% 10%;
+    justify-content: space-around;
+}
+
+.foodItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.foodItem > img {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: auto;
+}
+
+.addToCart {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.foodItem > p {
+    margin: 0;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.addToCart:hover{
+    opacity: 0.4;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.foodItem > img:hover {
+    opacity:0.5;
+}

@@ -1,0 +1,181 @@
+body{
+    background-color: #f4f6d4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Overarching navbar design styling */
+.navbar {
+    position: fixed;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+/* Overlay Styling */
+.overlay {
+    position: fixed;
+    width: 100%;
+    /*Figure out issue with to remove px specification of height. It should take the parent's height
+    Issue with % (percentages) */
+    height: 100px;
+    z-index: -1;
+    background-color: #f4f6d4;
+    opacity: 0.5;
+}
+
+/* Navigation bar selection list div styling (The box encapsulating the UL)*/
+.selectionList{
+    position: relative;
+    align-self: center;
+}
+
+/* Navigation bar selection list styling (The actual "ul" tag) */
+.selectionList > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the navigation bar list items (Each of the "ul" items) */
+.selectionList > ul > li {
+    float: left;
+}
+
+/* List item hover effect */
+.selectionList > ul > li :hover{
+    background-color: grey;
+}
+
+/* The sign in and sign out button styling */
+.selectionList > ul > li a{
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    margin: 8px;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+}
+
+/* Logo div */
+.logo {
+    position: relative;
+    z-index: -1;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Logo Image resizing */
+.logo > img {
+    width: 100px;
+    height: auto;
+}
+
+/* Welcome page main screen styling */
+.mainDiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: blue;
+}
+
+/* Main image div re-sizing */
+.mainDiv > img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styling for the location input bar div*/
+.locationSearch{
+    position:absolute;
+}
+
+/* Styling for categories section */
+.categories {
+    text-align: center;
+}
+
+/* Styling for food categories div */
+.foodCategories {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+/* Styling for category buttons (previous & next buttons) */
+.foodCategories > button {
+    border-radius: 5px; 
+    background-color: white;
+    border:none;
+    padding: 5px 17px;
+    text-decoration: none;  
+}
+
+/*Overarching images container styling*/
+.foodCategoriesImages {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*Styling for single image container*/
+.categoryImageContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Styling per image container */
+.categoryImageContainer > img {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+/* Category image overlay styling */
+.categoryImageOverlay {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 90%;
+    opacity: 0;
+    transition: .75s ease-in-out;
+    background-color: white;
+    align-items: center;
+}
+
+/* Category image overlay hovering effect */
+.categoryImageOverlay:hover {
+    opacity: 0.60;
+}
+
+/* Category image overlay paragraph styling */
+.categoryImageOverlay > p{
+    position: absolute;
+    display: flex;
+    font-size: 34px;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}

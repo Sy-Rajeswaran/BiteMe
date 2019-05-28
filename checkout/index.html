@@ -1,0 +1,85 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> BiteMe </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="overlay"></div>
+        <div class= "logo">
+            <img src="../Logo.png" alt="company_logo">
+        </div>    
+        <div class=selectionList>
+            <ul>
+                <li> 
+                    <button id="checkoutBag"> 
+                        <img src="bag.png" alt="checkout_bag"> 
+                    </button> 
+                </li>
+                <li>
+                    <a href="#signout">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="orderSection">
+            <div class="orderDetailsContainer">
+                <div class="orderInput">
+                    <h3 > Total Price: </h3>
+                    <h3 id="totalPrice"> $4.99 </h3>
+                </div>
+                <div class="orderInput">
+                    <button> Debit </button>
+                    <button> Credit </button>
+                    <button> Cash </button>
+                </div>
+                <div class="orderInput"> 
+                    <h3> Card Number: </h3>
+                    <input type="text">
+                </div>
+                <div class="orderInput">
+                    <h3> Expiry Date: </h3>
+                    <input type="text">
+                </div>
+                <div class="orderInput">
+                    <h3> CVV: </h3>
+                    <input type="text">
+                </div>
+                <div class="orderInput">
+                    <h3> Address: </h3>
+                    <input type="text">
+                </div>
+                <div class="orderInput">
+                    <h3> Apartement no. (Optional): </h3>
+                    <input type="text">
+                </div>
+                <div class="orderInput">
+                    <h3> City: </h3>
+                    <input type="text">
+                </div>
+                <div class="orderInput">
+                    <h3> Postal Code: </h3>
+                    <input type="text">
+                </div>
+
+                <div class="orderInput">
+                    <h3> Meet/Meet at</h3>
+                    <div class="switch">
+                        <input type="checkbox" class="meetCheckbox" id="meetSwitch" checked>
+                        <label class="meetLabel" for="meetSwitch">
+                            <span class="meetInner"></span>
+                            <span class="meetInnerSwitch"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Place order" class="btn">
+            </div>
+    </section>
+</body>
+</html>

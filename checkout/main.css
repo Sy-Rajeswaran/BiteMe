@@ -1,0 +1,222 @@
+body{
+    background-color: #f3f6d4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Overarching navbar design styling */
+.navbar {
+    position: fixed;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+/* Overlay Styling */
+.overlay {
+    position: fixed;
+    width: 100%;
+    /*Figure out issue with to remove px specification of height. It should take the parent's height
+    Issue with % (percentages) */
+    height: 100px;
+    z-index: -1;
+    background-color: #f4f6d4;
+    opacity: 0.5;
+}
+
+/* Navigation bar selection list div styling (The box encapsulating the UL)*/
+.selectionList{
+    position: relative;
+    align-self: center;
+    width: auto;
+}
+
+/* Navigation bar selection list styling (The actual "ul" tag) */
+.selectionList > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the navigation bar list items (Each of the "ul" items) */
+.selectionList > ul > li {
+    float: left;
+}
+
+/* List item hover effect */
+.selectionList > ul > li :hover{
+    background-color: grey;
+}
+
+/* The sign out button styling */
+.selectionList > ul > li a{
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    margin: 8px;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+}
+
+/* Styling for checkout bag button */
+#checkoutBag {
+    display: block;
+    text-decoration: none;
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    background-color: #f4f6d4;
+    opacity: 0.5; 
+}
+
+/* Styling for checkout bag image */
+#checkoutBag > img {
+    width: 20px;
+    height: auto;
+}
+
+/* Logo div */
+.logo {
+    position: relative;
+    z-index: -1;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Logo Image resizing */
+.logo > img {
+    width: 100px;
+    height: auto;
+}
+
+/* Styling for overarching order section container */
+.orderSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 110px;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.orderSection > div {
+    padding-top: 10px;
+}
+
+.orderDetailsContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-width: 2px;
+    border-style: ridge;
+    border-color: black;
+}
+
+.orderInput {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.orderInput > input[type="text"]{
+    margin-left: 10px;
+    height: 20px;
+}
+
+#totalPrice {
+    margin-left: 50%;
+    margin-right: 5%;
+    height: 20px;
+}
+
+.switch {
+    position: relative; 
+    width: 90px;
+}
+
+.meetCheckbox {
+    display: none;
+}
+.meetLabel {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+}
+
+.meetInner {
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.meetInner:before, .meetInner:after {
+    display: block; 
+    float: left; 
+    width: 50%; 
+    height: 30px; 
+    padding: 0; 
+    line-height: 30px;
+    font-size: 14px; 
+    color: white; 
+    font-family: Trebuchet, Arial, sans-serif; 
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.meetInner:before {
+    content: "Driver";
+    padding-left: 10px;
+    background-color: #34A7C1; 
+    color: #FFFFFF;
+}
+.meetInner:after {
+    content: "Door";
+    padding-right: 10px;
+    background-color: #EEEEEE; 
+    color: #999999;
+    text-align: right;
+}
+
+.meetInnerSwitch {
+    display: block; 
+    width: 18px; 
+    margin: 6px;
+    background: #FFFFFF;
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; 
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.meetCheckbox:checked + .meetLabel .meetInner {
+    margin-left: 0;
+}
+.meetCheckbox:checked + .meetLabel .meetInnerSwitch {
+    right: 0px; 
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}  
+
