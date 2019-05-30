@@ -6,7 +6,6 @@
     <title> BiteMe </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -25,27 +24,29 @@
             </ul>
         </div>
     </nav>
-    <section class="mainDiv">
-        <img src="main.jpg" alt="main_photo">
-        <div class="locationSearch">
-            <div>
-                <select name="Cities">
-                    <option value="Ottawa">Ottawa</option>
-                    <option value="Toronto">Toronto</option>
-                    <option value="Montreal">Montreal</option>
-                    <option value="Other">Other</option>
-                </select>
-                <input value="Enter a location.." type="input">
+    <section class="header">
+        <form>
+            <h1 id="searchTitle"> Find Restaurants</h1>
+            <div class="form-box">
+                <input type="text" class="search-field searchCategories"
+                    placeholder="Breakfast, Lunch..">
+                <div class="dropdown">
+                    <button class="dropdown_hover" id="dropdown_hover">Ottawa</button>
+                    <div class="dropdown_menu">
+                        <a onclick="changeDropdownText('Ottawa')"> Ottawa </a>
+                        <a onclick="changeDropdownText('Montreal')"> Montreal </a>
+                        <a onclick="changeDropdownText('Toronto')"> Toronto </a>
+                    </div>
+                </div>
+                <button class="search-btn" type="button" onclick="goToRestaurants()">Search</button>
             </div>
-            <input type="submit">
-        </div>
+        </form>
     </section>
     <section class="categories">
         <h1>
             Categories
         </h1>
         <div class="foodCategories">
-            <button> Previous </button>
             <div class="foodCategoriesImages">
                 <div class="categoryImageContainer">
                     <img src="breakfast.jpg" alt="breakfast">
@@ -66,8 +67,8 @@
                     </div>
                 </div>
             </div>
-            <button> Next </button>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>

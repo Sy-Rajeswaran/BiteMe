@@ -76,25 +76,102 @@ body{
     height: auto;
 }
 
-/* Welcome page main screen styling */
-.mainDiv {
-    position: relative;
+/* Main div styling */
+.header {
+    height:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)),url(main.jpg);
+    background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: blue;
+    align-items: center;
+    font-family: sans-serif;
 }
 
-/* Main image div re-sizing */
-.mainDiv > img {
-    width: 100%;
-    height: auto;
+#searchTitle {
+    color: #fff;
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
-/* Styling for the location input bar div*/
-.locationSearch{
+.search-field {
+    height: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.searchCategories {
+    width: 400px;
+}
+.location{
+    width: 200px;
+}
+
+/* Styling for City Selection Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+
+.dropdown_hover {
+    display: inline-block;
+    padding: 15px;
+    background: #323b40;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+}
+
+.dropdown_hover:hover {
+    background:#222;
+}
+
+.dropdown_menu {
     position:absolute;
+    display:none;
+    top:100%;
+    left: 0;
+    min-width: 200px;
+    background: white;
+    color: #323b40;
+    box-shadow: 0 3px 2px rgba(0,0,0,0.3);
 }
+
+.dropdown:hover .dropdown_menu {
+    display:block;
+}
+
+.dropdown_menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    border-top: solid 1px #e0e0e0;
+}
+
+.dropdown_menu a:hover {
+    background: #f0f0f0;
+    color: #323b40;
+}
+/* End of Styling for City Selection dropdown*/
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background: #ffeb3b;
+    border:none;
+    color: #000;
+    border-radius: 25px;
+}
+/* End of Styling for the Main Div*/
+
 
 /* Styling for categories section */
 .categories {
