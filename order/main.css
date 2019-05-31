@@ -1,0 +1,224 @@
+body {
+   background-color: #f3f6d4
+}
+        
+/* Overarching navbar design styling */
+.navbar {
+position: relative;
+display: flex;
+height: auto;
+justify-content: space-between;
+width: 100%;
+padding: 0;
+margin: 0;
+z-index: 1;
+}
+
+/* Overlay Styling */
+.overlay {
+position: fixed;
+width: 100%;
+/*Figure out issue with to remove px specification of height. It should take the parent's height
+Issue with % (percentages) */
+height: 100px;
+z-index: -1;
+background-color: #f4f6d4;
+opacity: 0.5;
+}
+
+/* Navigation bar selection list div styling (The box encapsulating the UL)*/
+.selectionList{
+position: relative;
+align-self: center;
+width: auto;
+}
+
+/* Navigation bar selection list styling (The actual "ul" tag) */
+.selectionList > ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+/* Styling for the navigation bar list items (Each of the "ul" items) */
+.selectionList > ul > li {
+float: left;
+}
+
+/* List item hover effect */
+.selectionList > ul > li :hover{
+background-color: grey;
+}
+
+/* The sign out button styling */
+.selectionList > ul > li a{
+display: block;
+text-decoration: none;
+padding: 8px;
+margin: 8px;
+color: white;
+background-color: black;
+border-radius: 8px;
+}
+
+/* Styling for checkout bag button */
+#checkoutBag {
+display: block;
+text-decoration: none;
+border: none;
+padding: 8px;
+margin: 8px;
+background-color: #f4f6d4;
+opacity: 0.5; 
+}
+
+/* Styling for checkout bag image */
+#checkoutBag > img {
+width: 20px;
+height: auto;
+}
+
+/* Logo div */
+.logo {
+position: relative;
+z-index: -1;
+justify-items: center;
+align-items: center;
+}
+
+/* Logo Image resizing */
+.logo > img {
+width: 100px;
+height: auto;
+}
+
+
+hr{
+   height: 0.2px;
+   color:black;
+   background-color: black;
+}
+
+.box{
+   
+   background:lightgray;
+   border: 3px solid black;
+   width: 35%;
+   height: 50%;
+   display: flex;
+   margin: auto;
+   top:30%;
+   left:30%;
+   border-radius: 3px
+}
+.smallBox{
+   background: grey;
+   width: 10px;
+   height: 10px;
+   padding-top:60 px; 
+   
+}
+.row {
+   display: -ms-flexbox; /* IE10 */
+   display: flex;
+   -ms-flex-wrap: wrap; /* IE10 */
+   flex-wrap: wrap;
+   padding: 0 4px;
+   padding-top: 0px;
+}
+.column{
+   flex: 15%;
+   padding: 15px;
+}
+
+.btn {
+background-color: #4CAF50;
+color: white;
+padding: 12px;
+margin: 10px 0;
+border: none;
+width: 100%;
+border-radius: 3px;
+cursor: pointer;
+font-size: 17px;
+}  
+
+.dropdown {
+display: inline-block;
+position: relative;
+}
+
+.dd-button {
+display: inline-block;
+border: 1px solid gray;
+border-radius: 4px;
+padding: 10px 30px 10px 20px;
+background-color: #ffffff;
+cursor: pointer;
+white-space: nowrap;
+}
+
+.dd-button:after {
+content: '';
+position: absolute;
+top: 50%;
+right: 15px;
+transform: translateY(-50%);
+width: 0; 
+height: 0; 
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-top: 5px solid black;
+}
+
+.dd-button:hover {
+background-color: #eeeeee;
+}
+
+.dd-input {
+display: none;
+}
+
+.dd-menu {
+position: absolute;
+top: 100%;
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 0;
+margin: 2px 0 0 0;
+box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+background-color: #ffffff;
+list-style-type: none;
+}
+
+.dd-input + .dd-menu {
+display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+display: block;
+} 
+
+.dd-menu li {
+padding: 10px 20px;
+cursor: pointer;
+white-space: nowrap;
+}
+
+.dd-menu li:hover {
+background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+display: block;
+margin: -10px -20px;
+padding: 10px 20px;
+}
+
+.dd-menu li.divider{
+padding: 0;
+border-bottom: 1px solid #cccccc;
+}
+h2{
+padding-left:32%;  
+}

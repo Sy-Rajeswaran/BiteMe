@@ -15,10 +15,8 @@
         </div>    
         <div class=selectionList>
             <ul>
-                <li> 
-                    <button id="checkoutBag" onclick="changePage()"> 
-                        <img src="bag.png" alt="checkout_bag"> 
-                    </button> 
+                <li>
+                    <a href="#signout">Sign In</a>
                 </li>
                 <li>
                     <a href="#signout">Sign Out</a>
@@ -30,7 +28,7 @@
     <section class="restaurantInformation">
         <div>
             <img src="restaurant_logo.png" alt="restaurant_logo"> 
-            <h2>    Dominos </h2>
+            <h2>Dominos</h2>
             <p> Hours: 9:00AM - 5:00PM  </p>
         </div>
     </section>
@@ -48,23 +46,29 @@
         <div class="foodItemDisplayContainer">
             <div class="foodItem">
                 <img src="burger.jpg" alt="burger">
-                <div class="addToCart">
-                    <img src="" alt="-   +">
+                <div class="quantitySection">
+                    <button>-</button>
+                    <span> 0 </span>
+                    <button>+</button>
                 </div>
                 <p> Triple Bacon Cheeseburger </p>
                 <p> $3.99 </p>
             </div>
             <div class="foodItem">
                 <img src="ribs.jpg" alt="ribs">
-                <div class="addToCart">
-                    <img src="" alt="-   +">
+                <div class="quantitySection">
+                    <button>-</button>
+                    <span> 0 </span>
+                    <button>+</button>
                 </div>
                 <p> Ribs & Fries Combo </p>
                 <p> $11.95 </p>
             </div>
         </div>
     </section>
-    <script src="script.js">
-    </script>
+    <div class="Checkout">
+            <input type="submit" value="Review Order" class="btn" onclick="changePage()">
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
