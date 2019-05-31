@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 body{
     background-color: #f3f6d4;
     margin: 0;
@@ -6,7 +8,7 @@ body{
 
 /* Overarching navbar design styling */
 .navbar {
-    position: fixed;
+    position: relative;
     display: flex;
     height: auto;
     justify-content: space-between;
@@ -94,50 +96,66 @@ body{
     height: auto;
 }
 
-/* Styling for overarching order section container */
-.orderSection {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding-top: 110px;
-    width: 100%;
+.payment {
+    background: #f8f8f8;
+    max-width: 360px;
+    margin: 80px auto;
     height: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-.orderSection > div {
-    padding-top: 10px;
-}
-
-.orderDetailsContainer {
+    padding: 35px;
+    padding-top: 70px;
+    border-radius: 5px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
-    border-width: 2px;
-    border-style: ridge;
-    border-color: black;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.orderInput {
+.payment h2 {
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: #555555;
+}
+
+.form .label {
+   display: block;
+   color: #555555;
+   margin-bottom: 6px;
+}
+
+.form .input {
+    padding: 13px 0 13px 25px;
+    width: 100%;
+    text-align:center;
+    border: 2px solid #dddddd;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    word-wrap: 3px;
+    outline: none;
+    font-size: 16px;
+    color: #555555;
+}
+
+.card-grp{
+    display:flex;
+}
+
+.space {
+    margin-bottom: 20px;
+}
+
+.icon-relative {
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
-.orderInput > input[type="text"]{
-    margin-left: 10px;
-    height: 20px;
+.icon-relative .fas,
+.icon-relative .far {
+    position:absolute;
+    bottom: 12px;
+    left: 15px;
+    font-size: 20px;
+    color: #555555;
 }
 
-#totalPrice {
-    margin-left: 50%;
-    margin-right: 5%;
-    height: 20px;
-}
-
+/*Meet At Door/Driver switch styling*/
 .switch {
     position: relative; 
     width: 90px;
@@ -183,8 +201,8 @@ body{
 .meetInner:after {
     content: "Door";
     padding-right: 10px;
-    background-color: #EEEEEE; 
-    color: #999999;
+    background-color: #43d841; 
+    color: #FFFFFF;
     text-align: right;
 }
 
@@ -207,7 +225,9 @@ body{
 .meetCheckbox:checked + .meetLabel .meetInnerSwitch {
     right: 0px; 
 }
+/*End of Styling*/
 
+/*Place order button styling*/
 .btn {
     background-color: #4CAF50;
     color: white;
@@ -218,5 +238,4 @@ body{
     border-radius: 3px;
     cursor: pointer;
     font-size: 17px;
-}  
-
+} 

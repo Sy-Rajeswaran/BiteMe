@@ -6,6 +6,7 @@
     <title> BiteMe </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://kit.fontawesome.com/d6aaee8298.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -24,47 +25,52 @@
             </ul>
         </div>
     </nav>
-    <section class="orderSection">
-            <div class="orderDetailsContainer">
-                <div class="orderInput">
-                    <h3 > Total Price: </h3>
-                    <h3 id="totalPrice"> $4.99 </h3>
-                </div>
-                <div class="orderInput">
-                    <button> Debit </button>
-                    <button> Credit </button>
-                    <button> Cash </button>
-                </div>
-                <div class="orderInput"> 
-                    <h3> Card Number: </h3>
-                    <input type="text">
-                </div>
-                <div class="orderInput">
-                    <h3> Expiry Date: </h3>
-                    <input type="text">
-                </div>
-                <div class="orderInput">
-                    <h3> CVV: </h3>
-                    <input type="text">
-                </div>
-                <div class="orderInput">
-                    <h3> Address: </h3>
-                    <input type="text">
-                </div>
-                <div class="orderInput">
-                    <h3> Apartement no. (Optional): </h3>
-                    <input type="text">
-                </div>
-                <div class="orderInput">
-                    <h3> City: </h3>
-                    <input type="text">
-                </div>
-                <div class="orderInput">
-                    <h3> Postal Code: </h3>
-                    <input type="text">
-                </div>
+    <hr>
+    <div class="wrapper">
+        <div class="payment">
+            <h2>Order Payment</h2>
 
-                <div class="orderInput">
+            <div class="form">
+                <div class="card space icon-relative">
+                    <label class="label">Street:</label>
+                    <input type="text" class="input" name="street_name" 
+                        placeholder="Street Name..">
+                        <i class="fas fa-street-view"></i>
+                </div>
+                <div class="card space icon-relative">
+                    <label class="label">Postal Code:</label>
+                    <input type="text" class="input" name="postal_code" 
+                        placeholder="Postal Code.." data-mask="A0A 0A0">
+                        <i class="far fa-address-book"></i>
+                </div>
+                <div class="card space icon-relative">
+                    <label class="label">Card Holder:</label>
+                    <input type="text" class="input" name="card_holder" 
+                    placeholder="Name on Card..">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="card space icon-relative">
+                        <label class="label">Card Number:</label>
+                        <input type="text" class="input" name="card_number" 
+                        placeholder="Card Number.." data-mask="0000 0000 0000 0000">
+                        <i class="far fa-credit-card"></i>
+                </div>
+                <div class="card-grp space">
+                    <div class="card-item icon-relative"> 
+                        <label class="label">Expiry date:</label>
+                        <input type="text" class="input" name="expiry_date"
+                        placeholder="00 / 00" data-mask="00/00">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-item icon-relative">
+                        <label class="label">CVC:</label>
+                        <input type="text" class="input" name="cvc" placeholder="000"
+                        data-mask="000">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="orderInput">
                     <h3> Meet/Meet at</h3>
                     <div class="switch">
                         <input type="checkbox" class="meetCheckbox" id="meetSwitch" checked>
@@ -73,12 +79,15 @@
                             <span class="meetInnerSwitch"></span>
                         </label>
                     </div>
-                </div>
             </div>
-            <div>
-                <input type="submit" value="Place order" class="btn">
-            </div>
-    </section>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Place order" class="btn">
+    </div>
+
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </body>
 </html>
