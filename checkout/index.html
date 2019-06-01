@@ -32,6 +32,7 @@
     <div class="wrapper">
         <div class="payment">
             <h2>Order Payment</h2>
+            <form name= "payment">
 
             <div class="form">
                 <div class="card space icon-relative">
@@ -62,7 +63,7 @@
                     <div class="card-item icon-relative"> 
                         <label class="label">Expiry date:</label>
                         <input type="text" class="input" name="expiry_date"
-                        placeholder="00 / 00" data-mask="00/00">
+                        placeholder="MM / YY" data-mask="00/00">
                         <i class="far fa-calendar-alt"></i>
                     </div>
                     <div class="card-item icon-relative">
@@ -73,6 +74,7 @@
                     </div>
                 </div>
             </div>
+            </form>
             <div class="orderInput">
                     <h3> Meet/Meet at</h3>
                     <div class="switch">
@@ -86,7 +88,7 @@
         </div>
     </div>
     <div>
-        <input type="submit" value="Place order" class="btn">
+        <input type="submit" value="Place order" class="btn" onclick="Feedback()">
     </div>
 
     <script src="script.js"></script>
