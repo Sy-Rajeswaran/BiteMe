@@ -20,39 +20,46 @@
           </ul>
       </div>
   </nav>
+  <div class= "back">
+      <img src="back.png" alt="back" onclick="back()">
+
+  </div>
      <h2>Your Order</h2>
     <div class="box">
             
             <div class="row">
                 <div class="column">
                     <h3>Amount</h3>
-                    <label class="dropdown">
-
-                            <div class="dd-button">
-                              1
+                    <div class="quantitySection">
+                            <button onclick="decrement('burger')">-</button>
+                            <span id="burger"> 1 </span>
+                            <button onclick="increment('burger')">+</button>
+                        </div>
+                        <div class="quantitySection">
+                                <button onclick="decrement('ribs')">-</button>
+                                <span id="ribs"> 1 </span>
+                                <button onclick="increment('ribs')">+</button>
                             </div>
-                          
-                            <input type="checkbox" class="dd-input" id="test">
-                          
-                            <ul class="dd-menu">
-                              <li>0</li>
-                              <li>2</li>
-                              <li>3</li>
-                              <li class="divider"></li>
-                            </li>
-                        </ul>
-                        
-                      </label>
 
                   
                 </div>
                 <div class="column">
                     <h3>Item</h3>
-                    <p>McDoubles</p>
+                    <p>Burgers</p>
+                    <p>Ribs</p>
                 </div>
                 <div class= "column">
-                    <h3>Price</h3>
-                    <p> $3.00</p>
+                    <h3>Price($)</h3>
+                    <span id ="priceBurg">3.99</span>
+                    <span id="priceRibs"> 11.95 </span>
+                </div>
+                <div class= "column">
+                        <h2>Total($)</h2>
+                        <h2>
+                            <span id ="total">15.94</span>
+                        </h2>
+                        
+
                 </div>
 
             </div>
@@ -72,7 +79,6 @@
 
 
     </div>
-<script src="script.js">
-</script>
+<script src="script.js"></script>
 </body>
 </html>

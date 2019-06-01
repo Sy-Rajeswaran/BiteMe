@@ -127,8 +127,8 @@ hr{
    padding-top: 0px;
 }
 .column{
-   flex: 15%;
-   padding: 15px;
+   flex: 5%;
+   padding: 50px;
 }
 
 .btn {
@@ -221,4 +221,29 @@ border-bottom: 1px solid #cccccc;
 }
 h2{
 padding-left:32%;  
+}
+.back{
+   float: left;
+   width: 10%;
+}
+.quantitySection {
+   position:relative;
+   display: flex;
+   justify-content: space-around;
+}
+
+.quantitySection button {
+   cursor: pointer;
+   text-decoration: none;
+   padding: 5px 10px;
+   outline: none;
+   border: none;
+   background-color: black;
+   color: white;
+   border-radius: 25px;
+   font-weight: bold;
+}
+
+.quantitySection button:hover {
+   opacity: 0.5;
 }
