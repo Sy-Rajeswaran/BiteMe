@@ -1,12 +1,8 @@
 function changePage() {
-    let total="total";
-    var currentTotal =parseFloat(document.querySelector("#"+total).firstChild.data);
-    if(currentTotal == 0.00){
-        alert("Your Order is Empty")
-    }
-    else{
-        location.replace("http://127.0.0.1:5500/checkout/")
-    }
+
+    localStorage.setItem('items', JSON.stringify(itemArray));
+    location.replace("http://127.0.0.1:5500/checkout/")
+    
     
     
 }
@@ -16,66 +12,29 @@ function Home(){
 }
 
 function back(){
+    localStorage.setItem('items', JSON.stringify(itemArray));
     location.replace("http://127.0.0.1:5500/menu/")
 }
+let itemArray=[];
+let total=0;
 
-function increment(foodType){
-    let foodName;
-    let Price;
-    let total= "total";
-    if (foodType==='ribs'){
-        foodName = "ribs";
-        Price= "priceRibs";
-        
-    } else {
-        foodName = "burger";
-        Price= "priceBurg";
+
+$( document ).ready(function() {
+    if (localStorage.getItem("itemArray") != null) {
+        itemArray = JSON.parse(localStorage.getItem("itemArray")); //set itemArray value
     }
-    var currentTotal =parseFloat(document.querySelector("#"+total).firstChild.data);
-    var currentQuantity = parseInt(document.querySelector("#"+foodName).firstChild.data); 
-    document.querySelector("#"+foodName).firstChild.data = currentQuantity+1;
+    if (localStorage.getItem("total") != null) {
+        total = parseFloat(localStorage.getItem("total")); //set total value
+    }        
+    console.log(itemArray);
+    console.log(total);
+
+    //add items to HTML
+    for (let i = 0; i < itemArray.length; i++) {
+        $('.orders span').append("<li>" + itemArray[i].name + " ($" + itemArray[i].price.toFixed(2) + ") X " + itemArray[i].count + "</li>");
+    }
+
+    //add total to HTML
+    $('.totals span').append("$" + total.toFixed(2));
     
-
-    if(Price=="priceRibs"){
-        var currentPriceRibs = parseFloat(document.querySelector("#"+Price).firstChild.data);
-        document.querySelector("#"+Price).firstChild.data = (currentPriceRibs+ 11.95).toFixed(2);
-        document.querySelector("#"+total).firstChild.data = (currentTotal+ 11.95).toFixed(2);
-    }if(Price== "priceBurg"){
-        var currentPriceBurgs = parseFloat(document.querySelector("#"+Price).firstChild.data);
-        document.querySelector("#"+Price).firstChild.data = (currentPriceBurgs+ 3.99).toFixed(2)
-        document.querySelector("#"+total).firstChild.data = (currentTotal+ 3.99).toFixed(2);
-    }
-
-
-    
-}
-
-function decrement(foodType){
-    let foodName;
-    let Price;
-    let total="total";
-    if (foodType==='ribs'){
-        foodName = "ribs";
-        Price= "priceRibs";
-        var currentPriceRibs = parseFloat(document.querySelector("#"+Price).firstChild.data);
-    } else {
-        foodName = "burger";
-        Price= "priceBurg";
-        var currentPriceBurgs = parseFloat(document.querySelector("#"+Price).firstChild.data);
-    }
-    var currentTotal =parseFloat(document.querySelector("#"+total).firstChild.data);
-    var currentQuantity = parseInt(document.querySelector("#"+foodName).firstChild.data);
-    
-    if(currentQuantity > 0){
-        document.querySelector("#"+foodName).firstChild.data = currentQuantity-1;
-    }
-    if(Price=="priceRibs" && currentQuantity > 0 && currentPriceRibs>0.00 && currentTotal>0.00){
-        
-        document.querySelector("#"+Price).firstChild.data = (currentPriceRibs -11.95).toFixed(2);
-        document.querySelector("#"+total).firstChild.data = (currentTotal- 11.95).toFixed(2);
-
-    }if(Price== "priceBurg" && currentQuantity > 0 && currentPriceBurgs>0.00 && currentTotal>0.00){
-        document.querySelector("#"+Price).firstChild.data = (currentPriceBurgs -3.99).toFixed(2)
-        document.querySelector("#"+total).firstChild.data = (currentTotal- 3.99).toFixed(2);
-    }
-}
+});

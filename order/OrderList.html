@@ -3,6 +3,7 @@
     <head>
         <title> BiteMe </title>
         <link href="main.css" media="screen" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     </head>
 <body>
     <nav class="navbar">
@@ -25,48 +26,23 @@
 
   </div>
      <h2>Your Order</h2>
-    <div class="box">
-            
-            <div class="row">
-                <div class="column">
-                    <h3>Amount</h3>
-                    <div class="quantitySection">
-                            <button onclick="decrement('burger')">-</button>
-                            <span id="burger"> 1 </span>
-                            <button onclick="increment('burger')">+</button>
-                        </div>
-                        <div class="quantitySection">
-                                <button onclick="decrement('ribs')">-</button>
-                                <span id="ribs"> 1 </span>
-                                <button onclick="increment('ribs')">+</button>
-                            </div>
+    
 
-                  
-                </div>
-                <div class="column">
-                    <h3>Item</h3>
-                    <p>Burgers</p>
-                    <p>Ribs</p>
-                </div>
-                <div class= "column">
-                    <h3>Price($)</h3>
-                    <span id ="priceBurg">3.99</span>
-                    <span id="priceRibs"> 11.95 </span>
-                </div>
-                <div class= "column">
-                        <h2>Total($)</h2>
-                        <h2>
-                            <span id ="total">15.94</span>
-                        </h2>
-                        
+                
+    <h2>Items</h2>
+     <div class="orders">
+    <h2>
+    <span id="items">
 
-                </div>
-
-            </div>
-
-        
-
-        </div>
+    </span>
+    </h2>
+     </div>
+     <div class="totals">
+        <h2>Total($)</h2>
+        <h2>
+        <span id ="total"></span>
+        </h2>
+     </div>
         <div class="topbar">
             <div class="Back">
 
