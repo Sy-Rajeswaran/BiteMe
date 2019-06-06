@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="https://kit.fontawesome.com/d6aaee8298.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -31,9 +32,18 @@
         </div>
     <div class="wrapper">
         <div class="payment">
+            <div class="orders">
+                <p>Items:</p>
+                <span id="items"></span>
+            </div>
+            <div class="totals">
+                <p>SubTotal:</p>
+                <span id ="total"></span>
+            </div>
+            <hr>
             <h2>Order Payment</h2>
             <form name= "payment">
-
+                
             <div class="form">
                 <div class="card space icon-relative">
                     <label class="label">Street:</label>
@@ -48,6 +58,9 @@
                         <i class="far fa-address-book"></i>
                 </div>
                 <div class="card space icon-relative">
+                        <input type="radio" id="Debit" name="paying"> Debit
+
+                        <input type="radio" id="Credit" name="paying">Credit
                     <label class="label">Card Holder:</label>
                     <input type="text" class="input" name="card_holder" 
                     placeholder="Name on Card..">
