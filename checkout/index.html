@@ -58,10 +58,20 @@
                         placeholder="Postal Code.." data-mask="A0A 0A0">
                         <i class="far fa-address-book"></i>
                 </div>
-                <div class="card space icon-relative">
-                        <input type="radio" id="Debit" name="paying"> Debit
+                <div class="payment-options">
+                    <!-- <input type="radio" id="Debit" name="paying"> Debit
+                    <input type="radio" id="Credit" name="paying">Credit -->
+                    <div>
+                        <button type="button" class="payment-choice first" onclick="changeFirstButtonColor()"> <i class="far fa-credit-card"></i> </button>
+                        <span>Credit</span>
+                    </div>
+                    <div>
+                        <button type="button" class="payment-choice second" onclick="changeSecondButtonColor()"> <i class="fas fa-credit-card"></i> </button>
+                        <span>Debit</span>
+                    </div>
+                </div>
 
-                        <input type="radio" id="Credit" name="paying">Credit
+                <div class="card space icon-relative">
                     <label class="label">Card Holder:</label>
                     <input type="text" class="input" name="card_holder" 
                     placeholder="Name on Card..">

@@ -41,3 +41,13 @@ $( document ).ready(function() {
     $('.totals span').append("$" + total.toFixed(2));
     
 });
+
+function changeFirstButtonColor(){
+    $('.first').css("background-color","#b8c7d1");
+    $('.second').css("background-color", "#f8f8f8");
+} 
+
+function changeSecondButtonColor() {
+    $('.first').css("background-color", "#f8f8f8");
+    $('.second').css("background-color", "#b8c7d1");
+}
