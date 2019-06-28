@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Search from './searchbar';
 import NavBar from './navigation';
-import {StyleSheet, View, Image, ScrollView} from 'react-native';
+import {StyleSheet, View, Image, ScrollView, Button} from 'react-native';
 
 export default class Welcome extends Component {
     static navigationOptions = {
@@ -12,13 +12,13 @@ export default class Welcome extends Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.outerContainer}>
-        <NavBar/>
         <View style={styles.imageContainer}>
           <Image style={styles.imageStyling} source={require('../assets/Logo.png')}/>
         </View>
         <View style={styles.innerContainer}>
           <Search/>
         </View>
+        <Button title="Click" onPress={()=>navigate('Payment')}></Button>
       </View>
     );
   }
