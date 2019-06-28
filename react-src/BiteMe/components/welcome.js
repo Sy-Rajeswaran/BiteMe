@@ -18,7 +18,8 @@ export default class Welcome extends Component {
         <View style={styles.innerContainer}>
           <Search/>
         </View>
-        <Button title="Click" onPress={()=>navigate('Payment')}></Button>
+        <Button title="Button to Checkout" onPress={()=>navigate('Checkout')}></Button>
+        <Button title="Button to Payment Page" onPress={()=>navigate('Payment')}></Button>
       </View>
     );
   }
