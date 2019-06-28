@@ -1,19 +1,22 @@
 import React, {Component} from 'react';
 import Search from './searchbar';
 import NavBar from './navigation';
-import {StyleSheet, View, Image, Button} from 'react-native';
+import {StyleSheet, View, Image, ScrollView} from 'react-native';
 
 export default class Welcome extends Component {
-  static navigationOptions = {
+    static navigationOptions = {
       title: 'Welcome',
-  };
+    };
+
     render() {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.outerContainer}>
         <NavBar/>
+        <View style={styles.imageContainer}>
+          <Image style={styles.imageStyling} source={require('../assets/Logo.png')}/>
+        </View>
         <View style={styles.innerContainer}>
-          <Image source={require('../assets/Logo.png')}/>
           <Search/>
         </View>
       </View>
@@ -30,9 +33,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   innerContainer:{
-    flex: 2,
+    flex: 1,
     flexDirection:'column',
     justifyContent:'space-evenly',
-    alignItems: 'center'
+    alignItems: 'stretch'
+  },
+  imageContainer:{
+    flex: 2,
+    alignItems:'center'
+  },
+  imageStyling:{
+    flex: 1,
+    width: 125,
+    height:125,
+    resizeMode: 'contain'
   }
 });
