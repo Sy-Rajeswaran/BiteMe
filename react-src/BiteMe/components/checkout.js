@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet, Button} from 'react-native';
 import NavBar from './navigation';
-import {Headline, DataTable} from 'react-native-paper';
+import {Appbar,Headline, DataTable} from 'react-native-paper';
 
 /**
  * Yo Sy, if you're looking at this and thinking "What the hell do I do", let me guide you my friend.
@@ -14,7 +14,10 @@ export default class Checkout extends React.Component{
         const {navigate}= this.props.navigation;
         return(
             <View>
-                <NavBar/>
+            <Appbar.Header>
+            <Appbar.BackAction onPress={() => this.props.navigation.goBack()}/>
+            <Appbar.Action icon="shopping-cart" onPress={() => navigate('Checkout')}/>
+            </Appbar.Header>
                 <View style={{display:'flex', flexDirection:'row', justifyContent:'center'
             , alignItems:'stretch'}}>
                     <Headline>Checkout Cart</Headline>

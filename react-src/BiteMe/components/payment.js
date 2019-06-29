@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, Button, StyleSheet, ScrollView} from 'react-native';
 import NavBar from './navigation';
-import {Switch, TextInput, RadioButton, Text, Avatar, Title} from 'react-native-paper';
+import {Appbar,Switch, TextInput, RadioButton, Text, Avatar, Title} from 'react-native-paper';
 
 export default class Payment extends React.Component{
     static navigationOptions = {
@@ -23,7 +23,10 @@ export default class Payment extends React.Component{
         const {isSwitchOn} = this.state;
         return(
         <ScrollView>
-            <NavBar/>
+            <Appbar.Header>
+            <Appbar.BackAction onPress={() => this.props.navigation.goBack()}/>
+            <Appbar.Action icon="shopping-cart" onPress={() => this.props.navigation.navigate('Checkout')}/>
+            </Appbar.Header>
             <View style={{display:'flex', flexDirection:'row', justifyContent:'center'
             , alignItems:'stretch'}}> 
                 <Title>Payment</Title>
