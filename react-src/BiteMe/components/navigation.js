@@ -6,9 +6,7 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <Appbar.Header>
-            <Appbar.BackAction
-              disabled={false}
-            />
+            <Appbar.BackAction onPress={() => this.props.navigation.goBack()}/>
             <Appbar.Action icon="shopping-cart"/>
       </Appbar.Header>
     );

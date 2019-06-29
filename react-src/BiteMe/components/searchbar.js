@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Searchbar, Card, Paragraph, Title} from 'react-native-paper';
+import {Searchbar, Card, Paragraph, Title, Button} from 'react-native-paper';
 import {StyleSheet, ScrollView, View} from 'react-native';
 
 export default class Search extends React.Component {
@@ -10,9 +10,13 @@ export default class Search extends React.Component {
             status: false
         }
     }
+    static navigationOptions = {
+        title: 'Search',
+      };
 
     render() {
         const {firstQuery} = this.state;
+        //const {navigate}=this.props.navigation;
         return (
             <View style={styles.viewResizing}>
                 <Searchbar placeholder="Search for Restaurants..."
@@ -26,21 +30,6 @@ export default class Search extends React.Component {
                 }}
                 value={firstQuery}>
                 </Searchbar>
-                {this.state.status &&
-                    <ScrollView contentContainerStyle={styles.viewResizing}>
-                        <Card elevation={3}>
-                            <Card.Cover source={require('../assets/Mcdonalds.jpg')}/>
-                            <Card.Content>
-                                <Title>
-                                    Mcdonalds
-                                </Title>
-                                <Paragraph>
-                                    Fast Food Restaurant Chain
-                                </Paragraph>
-                            </Card.Content>
-                        </Card>
-                    </ScrollView>
-                }
             </View>
         );
     }

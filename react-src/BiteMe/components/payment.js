@@ -82,7 +82,7 @@ export default class Payment extends React.Component{
                     }
                 />
             </View>
-            <Button title="Place Order"></Button>
+            <Button title="Place Order" ></Button>
         </ScrollView>
         );
     }

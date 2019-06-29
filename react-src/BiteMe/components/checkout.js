@@ -11,6 +11,7 @@ import {Headline, DataTable} from 'react-native-paper';
  */
 export default class Checkout extends React.Component{
     render(){
+        const {navigate}= this.props.navigation;
         return(
             <View>
                 <NavBar/>
@@ -38,7 +39,7 @@ export default class Checkout extends React.Component{
                     </DataTable.Row>
 
                 </DataTable>
-                <Button title="Continue to Payment"></Button>
+                <Button title="Continue to Payment" onPress={() => navigate('Payment')}></Button>
             </View>
         );
     }

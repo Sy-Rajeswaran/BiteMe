@@ -11,6 +11,7 @@ export default class Welcome extends Component {
     render() {
     const {navigate} = this.props.navigation;
     return (
+     
       <View style={styles.outerContainer}>
         <View style={styles.imageContainer}>
           <Image style={styles.imageStyling} source={require('../assets/Logo.png')}/>
@@ -18,9 +19,9 @@ export default class Welcome extends Component {
         <View style={styles.innerContainer}>
           <Search/>
         </View>
-        <Button title="Button to Checkout" onPress={()=>navigate('Checkout')}></Button>
-        <Button title="Button to Payment Page" onPress={()=>navigate('Payment')}></Button>
+        <Button title="Submit" onPress={()=>navigate('Restaurants')}></Button>
       </View>
+ 
     );
   }
 }
