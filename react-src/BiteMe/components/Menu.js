@@ -14,7 +14,7 @@ const reducer = (state= initialState, Action) => {
         case 'INCREASE_COUNTER1':
             Alert.alert("Burger added to Cart")
             
-            return {counter2:state.counter2, counter1: value1}
+            return {counter2:state.counter2, counter1: state.counter1+1}
         case 'INCREASE_COUNTER2':
             Alert.alert("Ribs added to Cart")
             return {counter2: state.counter2 +1, counter1:state.counter1}
