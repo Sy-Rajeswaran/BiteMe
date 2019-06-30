@@ -1,59 +1,66 @@
 import React, {Component} from 'react';
 import {Appbar, Card, Paragraph, Title, Button} from 'react-native-paper';
-import {StyleSheet, ScrollView, View} from 'react-native';
-import NavBar from './navigation';
+import {Alert,StyleSheet, ScrollView, View,Text} from 'react-native';
+import CounterApp from './counterApp'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+var value1, value2
+const initialState = {
+    counter1:0,
+    counter2:0
+}
+const reducer = (state= initialState, Action) => {
+    switch(Action.type){
+        case 'INCREASE_COUNTER1':
+            Alert.alert("Burger added to Cart")
+            value1 = state.counter1 +1
+            value2=state.counter2
+            return {counter2:value2, counter1: value1}
+        case 'INCREASE_COUNTER2':
+            Alert.alert("Ribs added to Cart")
+            value2 = state.counter2 +1
+            value1=state.counter1
+            return {counter2: value2 , counter1:value1}
+        case 'DECREASE_COUNTER1':
+            if (state.counter1 >0){
+                Alert.alert('Burger removed from Cart')
+                value1=state.counter1 -1
+                value2= state.counter2
+                return{counter1: value1, counter2:value2}
+            }
+        case 'DECREASE_COUNTER2':
+                if (state.counter2 >0){
+                    Alert.alert('Ribs removed from Cart')
+                    value2=state.counter2 -1
+                    value1= state.counter1
+                    return{counter2: value2 -1, counter1:value1}
+                }
+    }
+    return state
 
+}
+const store1 = createStore(reducer)
 export default class Menu extends Component {
     static navigationOptions = {
         title: 'Menu',
       };
+      
+
       render() {
           const {navigate}=this.props.navigation;
           return(
             <ScrollView>
             <Appbar.Header>
             <Appbar.BackAction onPress={() => this.props.navigation.goBack()}/>
-            <Appbar.Action icon="shopping-cart" onPress={() => navigate('Checkout')}/>
+            <Appbar.Action icon="shopping-cart" onPress={() => navigate('Checkout', {value1: this.value1, value2: this.value2})}/>
             </Appbar.Header>
                 <View style={{display:'flex', flexDirection:'row', justifyContent:'center'
                 , alignItems:'stretch'}}> 
                     <Title>Menu</Title>
                 </View>
-                    <Card>
-                    <Card.Cover source={require('../assets/burger.jpg')}/>
-                            <Card.Content>
-                                <Title>
-                                    Burger
-                                </Title>
-                                <Paragraph>
-                                This is the sweet-savory burger of your dreams. The two meat mixture is key here: 
-                                The sirloin and has clean, distinctive flavor, while the chuck provides fattiness 
-                                and keeps the burger juicy. 
-                                </Paragraph>
-                            </Card.Content>
-                            <Card.Actions>
-                                <Button icon = "add"></Button>
-                                <Button icon ="remove"></Button>
-                            </Card.Actions>
-                    </Card>
-                    <Card>
-                    <Card.Cover source={require('../assets/ribs.jpg')}/>
-                            <Card.Content>
-                                <Title>
-                                    Ribs
-                                </Title>
-                                <Paragraph>
-                                Covered with our secret recipe rub then slow smoked for 4-6 hours over hardwood oak 
-                                and apple woods to ‘melt-in-your-mouth’ perfection. Help yourself to the sauce of your choice. 
-                                </Paragraph>
-                            </Card.Content>
-                            <Card.Actions>
-                                <Button icon = "add"></Button>
-                                <Button icon ="remove"></Button>
-                            </Card.Actions>
-                    </Card>
-
-                
+                <Provider store = {store1}>
+                <CounterApp/>
+                </Provider>
             </ScrollView>
 
           );

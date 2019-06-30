@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Searchbar, Card, Paragraph, Title, Button} from 'react-native-paper';
+import {Appbar, Card, Paragraph, Title, Button} from 'react-native-paper';
 import {StyleSheet, ScrollView, View} from 'react-native';
 import NavBar from './navigation';
 
@@ -13,6 +13,9 @@ export default class ListOfRestaurants extends React.Component {
         const {navigate}=this.props.navigation;
         return (
             <View style={styles.viewResizing}>
+            <Appbar.Header>
+                <Appbar.BackAction onPress={() => this.props.navigation.goBack()}></Appbar.BackAction>
+            </Appbar.Header>
                 <View style={{display:'flex', flexDirection:'row', justifyContent:'center'
                 , alignItems:'stretch'}}> 
                     <Title>Fast Food Restaurants </Title>

@@ -10,6 +10,13 @@ import {Appbar,Headline, DataTable} from 'react-native-paper';
  * Third, If you're still confused, message me. I'll help 
  */
 export default class Checkout extends React.Component{
+    constructor(props){
+    super(props)
+    this.state={
+        value1 : this.props.navigation.state.param.value1 ,
+        value2 : this.props.navigation.state.param.value2
+    }
+    }
     render(){
         const {navigate}= this.props.navigation;
         return(
@@ -31,13 +38,13 @@ export default class Checkout extends React.Component{
 
                     <DataTable.Row>
                         <DataTable.Cell>Burgers</DataTable.Cell>
-                        <DataTable.Cell numeric>5</DataTable.Cell>
+                        <DataTable.Cell >{this.state.value1}</DataTable.Cell>
                         <DataTable.Cell numeric>14.96</DataTable.Cell>
                     </DataTable.Row>
 
                     <DataTable.Row>
                         <DataTable.Cell>Ribs</DataTable.Cell>
-                        <DataTable.Cell numeric>4</DataTable.Cell>
+                        <DataTable.Cell >{this.state.value2}</DataTable.Cell>
                         <DataTable.Cell numeric>34.21</DataTable.Cell>
                     </DataTable.Row>
 
