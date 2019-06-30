@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {Appbar, Card, Paragraph, Title, Button} from 'react-native-paper';
-import {Alert,StyleSheet, ScrollView, View,Text} from 'react-native';
+import {Card, Paragraph, Title, Button} from 'react-native-paper';
+import {StyleSheet, View,Text} from 'react-native';
 import {connect} from 'react-redux'
 
 
