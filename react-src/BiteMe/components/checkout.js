@@ -38,13 +38,13 @@ export default class Checkout extends React.Component{
 
                     <DataTable.Row>
                         <DataTable.Cell>Burgers</DataTable.Cell>
-                        <DataTable.Cell >{this.state.value1}</DataTable.Cell>
+                        <DataTable.Cell >{value1}</DataTable.Cell>
                         <DataTable.Cell numeric>14.96</DataTable.Cell>
                     </DataTable.Row>
 
                     <DataTable.Row>
                         <DataTable.Cell>Ribs</DataTable.Cell>
-                        <DataTable.Cell >{this.state.value2}</DataTable.Cell>
+                        <DataTable.Cell >{value2}</DataTable.Cell>
                         <DataTable.Cell numeric>34.21</DataTable.Cell>
                     </DataTable.Row>
 
