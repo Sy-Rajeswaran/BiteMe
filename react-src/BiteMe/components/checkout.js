@@ -15,9 +15,10 @@ export default class Checkout extends React.Component{
     }
 
     state={
-        value1 : this.props.navigation.state.counter1 ,
-        value2 : this.props.navigation.state.counter2
+        value1 : this.props.navigation.state.params.value1  ,
+        value2 : this.props.navigation.state.params.value2
     }
+
 
     render(){
         const {navigate}= this.props.navigation;
@@ -40,14 +41,14 @@ export default class Checkout extends React.Component{
 
                     <DataTable.Row>
                         <DataTable.Cell>Burgers</DataTable.Cell>
-                        <DataTable.Cell >{this.state.value1}</DataTable.Cell>
-                        <DataTable.Cell numeric>14.96</DataTable.Cell>
+                        <DataTable.Cell numeric>{this.state.value1}</DataTable.Cell>
+                        <DataTable.Cell numeric>${this.state.value1*5.00}.00</DataTable.Cell>
                     </DataTable.Row>
 
                     <DataTable.Row>
                         <DataTable.Cell>Ribs</DataTable.Cell>
-                        <DataTable.Cell >{this.state.value2}</DataTable.Cell>
-                        <DataTable.Cell numeric>34.21</DataTable.Cell>
+                        <DataTable.Cell numeric >{this.state.value2}</DataTable.Cell>
+                        <DataTable.Cell numeric>${this.state.value2 *11.00}.00</DataTable.Cell>
                     </DataTable.Row>
 
                 </DataTable>

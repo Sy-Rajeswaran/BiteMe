@@ -38,8 +38,10 @@ export default class Payment extends React.Component{
             </TextInput>
             <TextInput mode='outlined'
                         label='Enter Postal Code...'
+                        maxLength={6}
                         value={this.state.postalCode}
                         onChangeText={text => this.setState({postalCode:text})}>
+                         
             </TextInput>
             <RadioButton.Group
                         onValueChange={value => this.setState({ value })}
@@ -63,8 +65,10 @@ export default class Payment extends React.Component{
             </TextInput>
             <TextInput mode='outlined'
                         label='Enter Card Number...'
+                        maxLength = {12}
                         value={this.state.cardNumber}
-                        onChangeText={text => this.setState({cardNumber:text})}>
+                        onChangeText={text => this.setState({cardNumber:text})}
+                        keyboardType={'numeric'}>
             </TextInput>
             <TextInput mode='outlined'
                         label='Enter Card Expiry Date (MM/DD)...'
@@ -73,8 +77,10 @@ export default class Payment extends React.Component{
             </TextInput>
             <TextInput mode='outlined'
                         label='Enter Card CVC...'
+                        maxLength={3}
                         value={this.state.cvc}
-                        onChangeText={text => this.setState({cvc:text})}>
+                        onChangeText={text => this.setState({cvc:text})}
+                        keyboardType={'numeric'}>
             </TextInput>
             <View style={styles.paymentChoiceLayout}>
                 <Text>Meet Driver at Door</Text>

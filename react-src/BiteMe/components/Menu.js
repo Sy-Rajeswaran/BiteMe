@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Appbar, Title} from 'react-native-paper';
-import {StyleSheet, ScrollView, View,Text} from 'react-native';
+import {Alert,StyleSheet, ScrollView, View,Text} from 'react-native';
 import CounterApp from './counterApp'
+import {Value1, Value2} from '../index';
 
 export default class Menu extends Component {
     static navigationOptions = {
         title: 'Menu',
       };
-      
 
       render() {
           const {navigate}=this.props.navigation;
@@ -15,7 +15,7 @@ export default class Menu extends Component {
             <ScrollView>
             <Appbar.Header>
             <Appbar.BackAction onPress={() => this.props.navigation.goBack()}/>
-            <Appbar.Action icon="shopping-cart" onPress={() => navigate('Checkout', {value1:this.counter1}, value2= this.counter2)}/>
+            <Appbar.Action icon="shopping-cart" onPress={() => navigate('Checkout', {value1:Value1.toString(), value2: Value2.toString() })}/>
             </Appbar.Header>
                 <View style={{display:'flex', flexDirection:'row', justifyContent:'center'
                 , alignItems:'stretch'}}> 
