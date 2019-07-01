@@ -124,7 +124,7 @@ export default class Payment extends React.Component{
                         keyboardType={'numeric'}>
             </TextInput>
             <TextInput mode='outlined'
-                        label='Enter Card Expiry Date (MM-DD)...'
+                        label='Enter Card Expiry Date (MM-YY)...'
                         value={this.state.expiryDate}
                         onChangeText={text => {
                             this.setState({expiryDate:text})

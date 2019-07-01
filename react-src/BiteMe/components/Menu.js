@@ -3,6 +3,7 @@ import {Appbar, Title} from 'react-native-paper';
 import {Alert,StyleSheet, ScrollView, View,Text} from 'react-native';
 import CounterApp from './counterApp'
 import {Value1, Value2} from '../index';
+import Toast from 'react-native-root-toast';
 
 export default class Menu extends Component {
     static navigationOptions = {
@@ -15,7 +16,22 @@ export default class Menu extends Component {
             <ScrollView>
             <Appbar.Header>
             <Appbar.BackAction onPress={() => this.props.navigation.goBack()}/>
-            <Appbar.Action icon="shopping-cart" onPress={() => navigate('Checkout', {value1:Value1.toString(), value2: Value2.toString() })}/>
+            <Appbar.Action icon="shopping-cart" onPress={() => {if (Value1.toString() == 0 && Value2.toString()==0) {
+                
+                Toast.show("Empty Cart",{
+                    duration: Toast.durations.SHORT,
+                    position: Toast.positions.BOTTOM,
+                    shadow: true,
+                    animation: true,
+                    hideOnPress: true,
+                    delay: 0,
+                    backgroundColor:'red'
+                });
+            } else {
+                this.props.navigation.navigate('Checkout', {value1:Value1.toString(), value2:Value2.toString()})
+
+                
+            }}}/>
             </Appbar.Header>
                 <View style={{display:'flex', flexDirection:'row', justifyContent:'center'
                 , alignItems:'stretch'}}> 
