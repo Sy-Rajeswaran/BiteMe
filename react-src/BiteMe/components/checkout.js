@@ -9,6 +9,7 @@ import {Appbar,Headline, DataTable} from 'react-native-paper';
  * Second, Replace my silly hardcoded values with the legit ones. Look at <DataTable.Row> tags..
  * Third, If you're still confused, message me. I'll help 
  */
+
 export default class Checkout extends React.Component{
     constructor(props){
         super(props)
@@ -40,7 +41,7 @@ export default class Checkout extends React.Component{
                     </DataTable.Header>
 
                     <DataTable.Row>
-                        <DataTable.Cell>Burgers</DataTable.Cell>
+                        <DataTable.Cell>Burger</DataTable.Cell>
                         <DataTable.Cell numeric>{this.state.value1}</DataTable.Cell>
                         <DataTable.Cell numeric>${this.state.value1*5.00}.00</DataTable.Cell>
                     </DataTable.Row>
@@ -50,6 +51,14 @@ export default class Checkout extends React.Component{
                         <DataTable.Cell numeric >{this.state.value2}</DataTable.Cell>
                         <DataTable.Cell numeric>${this.state.value2 *11.00}.00</DataTable.Cell>
                     </DataTable.Row>
+
+                </DataTable>
+                <DataTable>
+                <DataTable.Row> 
+                <DataTable.Title>Total</DataTable.Title>
+                <DataTable.Title>${(this.state.value1*5.00)+(this.state.value2 *11.00)}.00</DataTable.Title>
+
+                </DataTable.Row>
 
                 </DataTable>
                 <Button title="Continue to Payment" onPress={() => navigate('Payment')}></Button>
